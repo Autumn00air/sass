@@ -1,0 +1,11 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "sass知识补充\r sass是最大，最广泛使用的css拓展语言\r sass会将scss文件编译成css，来让浏览器认识\r scss是sass的一个子集，更加符合原生的sass书写规范，而不是sass这种缩进式的写法\r 有时候空格是很重要的，因为你变量和减号这种东西写在一起，她不知道是减号还是横杠\r 养成句末写分号的习惯",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

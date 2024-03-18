@@ -1,0 +1,114 @@
+//变量
+$color: blue;
+
+div {
+    background-color: $color;
+}
+
+p {
+    background-color: $color;
+}
+
+//分支
+//条件分支
+$isTrue: false;
+$toB: true;
+
+@if($isTrue) {
+    header {
+        display: hidden;
+    }
+}
+
+@else if($toB) {
+    header {
+        display: flex;
+    }
+}
+
+@else {
+    header {
+        display: block;
+    }
+}
+
+//循环分支
+@for $item from 1 to 6 {
+    li:nth-child(#{$item}) {
+        width: $item * 100px;
+    }
+}
+
+@for $item from 1 through 6 {
+    li:nth-child(#{$item}) {
+        height: $item*100px;
+    }
+}
+
+//数组遍历
+$arr: yellow, blue, white;
+
+@each $item in $arr {
+    $index: index($arr, $item);
+
+    div:nth-child(#{$index}) {
+        width: $index * 100px;
+        color: $item;
+    }
+}
+
+//混入，也就是函数
+@mixin myfun($mycolor: white, $mywidth: 15px) {
+    width: $mywidth * 10;
+    background-color: $mycolor;
+}
+
+p {
+    @include myfun(yellow)
+}
+
+h {
+    @include myfun();
+    text-align: center;
+}
+
+.footer {
+    @include myfun(yellowgreen, 280px);
+}
+
+//嵌套
+//后代 子代 伪类
+div {
+    border: 1px solid red;
+
+    img {
+        width: 100%;
+    }
+
+    >p {
+        text-indent: 2em;
+    }
+
+    &:hover {
+        color: yellowgreen;
+    }
+}
+
+//继承
+.kkk {
+    width: 100%;
+    height: 100%;
+}
+
+.aaa {
+    @extend .kkk;
+    background-color: yellowgreen;
+}
+
+//导入
+@import "a.scss";
+@import "another.scss";
+
+p {
+    color: $what
+}
